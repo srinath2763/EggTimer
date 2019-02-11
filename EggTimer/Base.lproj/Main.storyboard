@@ -38,9 +38,9 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgG-9U-i2y">
                                 <rect key="frame" x="0.0" y="613" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="10s Forward" width="42" style="plain" id="eRv-aA-MYU">
+                                    <barButtonItem title="10s Back" width="42" style="plain" id="o1K-OA-mQd">
                                         <connections>
-                                            <action selector="forwardTapped:" destination="BYZ-38-t0r" id="9HM-D0-ooW"/>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="lLt-Nx-gAW"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Reset" width="188.5" style="plain" id="cDS-5c-nUm">
@@ -48,9 +48,9 @@
                                             <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="fes-fZ-yju"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="10s Back" width="42" style="plain" id="o1K-OA-mQd">
+                                    <barButtonItem title="10s Forward" width="42" style="plain" id="eRv-aA-MYU">
                                         <connections>
-                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="lLt-Nx-gAW"/>
+                                            <action selector="forwardTapped:" destination="BYZ-38-t0r" id="9HM-D0-ooW"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
