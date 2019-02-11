@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,80 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpE-A6-RBE">
+                                <rect key="frame" x="0.0" y="40" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="EggTimer" id="jJP-ai-GxN">
+                                        <barButtonItem key="leftBarButtonItem" title="Pause" id="aJ9-RJ-KVS">
+                                            <connections>
+                                                <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" id="8mt-FH-Vqg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Play" id="Uxu-8K-o87">
+                                            <connections>
+                                                <action selector="playButtonTapped:" destination="BYZ-38-t0r" id="8Cu-7f-eR3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgG-9U-i2y">
+                                <rect key="frame" x="0.0" y="613" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="10s Forward" width="42" style="plain" id="eRv-aA-MYU">
+                                        <connections>
+                                            <action selector="forwardTapped:" destination="BYZ-38-t0r" id="9HM-D0-ooW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Reset" width="188.5" style="plain" id="cDS-5c-nUm">
+                                        <connections>
+                                            <action selector="resetButtonTapped:" destination="BYZ-38-t0r" id="fes-fZ-yju"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="10s Back" width="42" style="plain" id="o1K-OA-mQd">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="lLt-Nx-gAW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cv-mE-VAo">
+                                <rect key="frame" x="122" y="311" width="131" height="45"/>
+                                <color key="backgroundColor" red="0.89053731477322362" green="0.89053731477322362" blue="0.89053731477322362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="XnQ-rN-h9I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5cv-mE-VAo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JyV-0q-0xI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RgG-9U-i2y" secondAttribute="bottom" constant="10" id="KHw-m2-Jy1"/>
+                            <constraint firstItem="vpE-A6-RBE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="L2d-zE-NBP"/>
+                            <constraint firstItem="vpE-A6-RBE" firstAttribute="leading" secondItem="RgG-9U-i2y" secondAttribute="leading" id="LLb-yU-Vcg"/>
+                            <constraint firstItem="vpE-A6-RBE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bLr-KV-Hl0"/>
+                            <constraint firstAttribute="trailing" secondItem="vpE-A6-RBE" secondAttribute="trailing" id="fzM-1C-RGe"/>
+                            <constraint firstItem="5cv-mE-VAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="mE3-2U-jJE"/>
+                            <constraint firstItem="vpE-A6-RBE" firstAttribute="trailing" secondItem="RgG-9U-i2y" secondAttribute="trailing" id="qtw-FQ-78W"/>
+                            <constraint firstItem="vpE-A6-RBE" firstAttribute="centerX" secondItem="5cv-mE-VAo" secondAttribute="centerX" id="sE3-fZ-vdD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="5cv-mE-VAo" id="WyS-Wf-9pa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="85.599999999999994" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>
